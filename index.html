@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Business Partner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #2d3748;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fefefe;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: url('assets/images/ABP.png') center/contain no-repeat;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-fallback {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #1e3a5f, #2c5282);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #1e3a5f;
+        }
+        
+        .subtitle {
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .link-card {
+            background: #fefefe;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            color: #2d3748;
+            position: relative;
+        }
+        
+        .link-card:hover {
+            border-color: #d69e2e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(214, 158, 46, 0.15);
+        }
+        
+        .link-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 15px;
+            display: block;
+            border-radius: 12px;
+        }
+        
+        .link-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #1e3a5f;
+        }
+        
+        .link-description {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .order-tool {
+            border-color: #d69e2e;
+        }
+        
+        .order-tool:hover {
+            border-color: #b7791f;
+            box-shadow: 0 8px 25px rgba(214, 158, 46, 0.25);
+        }
+        
+        .discovery {
+            border-color: #1e3a5f;
+        }
+        
+        .discovery:hover {
+            border-color: #2c5282;
+            box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15);
+        }
+        
+        .cash-flow {
+            border-color: #d69e2e;
+        }
+        
+        .cash-flow:hover {
+            border-color: #b7791f;
+            box-shadow: 0 8px 25px rgba(214, 158, 46, 0.25);
+        }
+        
+        .email-signup {
+            background: linear-gradient(45deg, #1e3a5f, #2c5282);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            color: white;
+        }
+        
+        .email-signup h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .email-signup p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 10px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .email-button {
+            background: #d69e2e;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .email-button:hover {
+            background: #b7791f;
+            transform: translateY(-1px);
+        }
+        
+        .social-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .social-link {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px;
+            background: #f7fafc;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #4a5568;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #d69e2e;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #4a5568;
+            font-size: 14px;
+        }
+        
+        .success-message {
+            background: #f0fff4;
+            color: #22543d;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: none;
+            border: 1px solid #9ae6b4;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .link-card {
+                padding: 15px;
+            }
+            
+            .email-form {
+                flex-direction: column;
+                max-width: 100%;
+            }
+            
+            .email-input {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"></div>
+        <!-- Fallback if logo image doesn't load -->
+        <div class="logo-fallback" style="display: none;">ABP</div>
+        <h1>African Business Partner</h1>
+        <p class="subtitle">Your business infrastructure partner</p>
+        
+        <a href="https://youssabisell.com" class="link-card order-tool">
+            <img src="assets/icons/YS.png" alt="You Sabi Sell" class="link-icon">
+            <div class="link-title">You Sabi Sell</div>
+            <div class="link-description">Never miss an order - Get your personalised link for orders from any platform</div>
+        </a>
+        
+        <a href="https://findabizafrica.com" class="link-card discovery">
+            <img src="assets/icons/FB.png" alt="Find A Biz Africa" class="link-icon">
+            <div class="link-title">Find A Biz Africa</div>
+            <div class="link-description">Not searchable? Not sellable - Get discovered when customers search online</div>
+        </a>
+        
+        <a href="https://trakivo.com" class="link-card cash-flow">
+            <img src="assets/icons/TK.png" alt="Trakivo" class="link-icon">
+            <div class="link-title">Trakivo</div>
+            <div class="link-description">Know where your money goes - Track cash flow and manage business finances</div>
+        </a>
+        
+        <div class="email-signup">
+            <h3>Stay Updated</h3>
+            <p>Get African business insights, tips, and early access to new tools</p>
+            <form class="email-form" id="emailForm">
+                <input 
+                    type="email" 
+                    class="email-input" 
+                    placeholder="Enter your email"
+                    required
+                    id="emailInput"
+                >
+                <button type="submit" class="email-button">Join</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                Thanks! We'll keep you updated on new business tools and insights.
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://instagram.com/africanbizpartner" class="social-link">📱 Instagram</a>
+            <a href="mailto:hello@africanbizpartner.com" class="social-link">📧 Email</a>
+        </div>
+        
+        <div class="footer">
+            <p>Building sustainable businesses across Africa</p>
+        </div>
+    </div>
+
+    <script>
+        // MailerLite email collection
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            const successMessage = document.getElementById('successMessage');
+            const emailInput = document.getElementById('emailInput');
+            const submitButton = document.querySelector('.email-button');
+            
+            // Disable form while submitting
+            submitButton.textContent = 'Joining...';
+            submitButton.disabled = true;
+            
+            // MailerLite API integration
+            fetch('https://connect.mailerlite.com/api/subscribers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiY2QzODc4Y2ViOTNmMzU1ZTFhM2UwOTZjMGI3NDU2NDgzNWU3NDE0M2U2MDcxNzNmOTc2NWZmYjRhY2RkNDUyZWMwNzg2NTg3NWQ5YjRlOWIiLCJpYXQiOjE3NTA2ODAzNTEuMzgzOTYzLCJuYmYiOjE3NTA2ODAzNTEuMzgzOTY1LCJleHAiOjQ5MDYzNTM5NTEuMzgwMDAzLCJzdWIiOiI5NzA4NjgiLCJzY29wZXMiOltdfQ.SW6F3sf9V_5KATfOPLGhRx9V2MPUWxgveFNXg4BSJ8FSHkMQwv5WLzUpZkEuzOQqBZODPGJl30RG6EDK7XSZcmr3ZuUfAlhhqStCXv3lAN5Yh-WAcNRRol-5mw4IX8QS5HkWLqJDPbHWQM5a8KSqKiXXg34KguFXGzAC_hAEPZfHCctUQ7z4I3KFLSGDCnfajt798YcrKndXp-zMmtnPthIqunfXgalF4fRsFfrmGLXGwwmkWLJO2OxDvkIiVT6JQjdahKzKMw2GOd-thXrmI5B6wdHpI1M3aJArQjUnqyTEYa_51YtMK50_wk8LK3Rs0yVjpZ1I-gqn4LpKwogZ2eK4b76-QjMMZqAV1fM7_CN-fLaRu9YOUF79rFrbSg8_HQKm1y9GihR3e2wlc_kUNT_qDEg6hSgSim9-CPI2cURjG3Jy8N2NoXlnp_EMZ_RkQhCWm8aaFuuaM5Rcvat4d6kyT_E2oIPIh-u7tBtgGdAoCLR3_dbIsSLqNVclmkZmMxOR2X1z6iu-Q2s7nShVG8FK-JKbn5_aEpPsgUt6tZ54piPjsqOmdQKCGMh0kbnAGheLclGrfS5cYbkJX14tmBL-7mLl8ybeqEHEnCvB3gvlolQcm_-bgKrzHS6rRqc5Gvlk3SWamVraTHQiO0LwhvT6cijhsgFehzMZeoXY-Z8',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    groups: ['157999971438691851'], // Optional: add to specific group
+                    fields: {
+                        source: 'African Business Partner Website'
+                    }
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    successMessage.style.display = 'block';
+                    emailInput.value = '';
+                    submitButton.textContent = 'Joined!';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitButton.textContent = 'Join';
+                        submitButton.disabled = false;
+                    }, 3000);
+                } else {
+                    throw new Error('Subscription failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+                submitButton.textContent = 'Join';
+                submitButton.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
